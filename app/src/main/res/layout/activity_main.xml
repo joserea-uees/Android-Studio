@@ -38,13 +38,13 @@
             app:layout_constraintEnd_toEndOf="@+id/view_title_background" />
 
         <EditText
-            android:id="@+id/editTextId"
+            android:id="@+id/txtid"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="ID"
+            android:hint="ID (para buscar/actualizar/eliminar)"
             android:inputType="number"
             android:ems="10"
-            android:enabled="false"
+            android:enabled="true"
             android:backgroundTint="#888888"
             app:layout_constraintTop_toBottomOf="@+id/view_title_background"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,26 +53,26 @@
             android:layout_marginHorizontal="32dp" />
 
         <EditText
-            android:id="@+id/editTextNombre"
+            android:id="@+id/txtnombre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Nombre"
             android:inputType="textPersonName"
             android:ems="10"
-            app:layout_constraintTop_toBottomOf="@+id/editTextId"
+            app:layout_constraintTop_toBottomOf="@+id/txtid"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="32dp" />
 
         <EditText
-            android:id="@+id/editTextApellido"
+            android:id="@+id/txtapellido"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Apellido"
             android:inputType="textPersonName"
             android:ems="10"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNombre"
+            app:layout_constraintTop_toBottomOf="@+id/txtnombre"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
@@ -83,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/editTextApellido"
+            app:layout_constraintTop_toBottomOf="@+id/txtapellido"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="32dp"
@@ -97,21 +97,23 @@
 
                 <Button
                     android:id="@+id/btnGuardar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Guardar"
                     android:layout_marginEnd="8dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                    android:layout_weight="1"
+                    android:onClick="Guardar"
+                    android:text="Guardar" />
 
                 <Button
                     android:id="@+id/btnActualizar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Actualizar"
                     android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                    android:layout_weight="1"
+                    android:onClick="Actualizar"
+                    android:text="Actualizar" />
             </LinearLayout>
 
             <LinearLayout
@@ -122,49 +124,33 @@
 
                 <Button
                     android:id="@+id/btnBuscar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Buscar"
                     android:layout_marginEnd="8dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                    android:layout_weight="1"
+                    android:onClick="Buscar"
+                    android:text="Buscar" />
 
                 <Button
                     android:id="@+id/btnEliminar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Eliminar"
                     android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                    android:layout_weight="1"
+                    android:onClick="Eliminar"
+                    android:text="Eliminar" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnListar"
+                android:id="@+id/Listado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Listar"
+                android:onClick="Listar"
                 style="@style/Widget.MaterialComponents.Button" />
         </LinearLayout>
 
-        <!-- Área para mostrar resultados  -->
-        <TextView
-            android:id="@+id/textViewResultados"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="32dp"
-            android:text="Resultados aparecerán aquí..."
-            android:textColor="#666666"
-            android:background="#F5F5F5"
-            android:padding="12dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/buttonContainer"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

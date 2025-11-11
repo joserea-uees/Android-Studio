@@ -5,8 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
-
-    // Si cambias el esquema de la base, incrementa la versión
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Ejemplo.db";
 
@@ -21,12 +19,11 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // En caso de actualización se recrea la base
         db.execSQL(FeedReaderContract.SQL_DELETE_ENTRIES);
         onCreate(db);
     }
 
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        onUpgrade(db,oldVersion,newVersion);
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
     }
 }
